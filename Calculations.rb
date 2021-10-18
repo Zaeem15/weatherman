@@ -8,19 +8,12 @@ module Calculations
     sum= 0
     count = 0
     max_temp.each do |x|
-      sum= sum+ x.to_i
+      sum= sum + x.to_i
       count = count + 1
     end
     avg = sum / count
     avg
   end
-
-
-  def date_return
-    date = dates
-    date
-  end
-
 
 
   def avg_min_temp
@@ -101,10 +94,4 @@ module Calculations
   end
 
 
-  def ret_high_min_temp
-    (max_temp && min_temp).each do |num|
-      puts num
-    end
-  end
-
-
+end
