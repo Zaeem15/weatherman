@@ -2,6 +2,7 @@
 
 require 'date'
 require 'csv'
+require 'colorize'
 require '/home/devs/Downloads/Weatherman/weatherman/Calculations.rb'
 
 class Weatherman
@@ -72,15 +73,31 @@ option = ARGV[0]
       puts "Average Humidity: #{obj1.avg_humidity_percentage}%  \n"
 
     when '-c'
-      puts "Ccase"
+      # puts "Ccase"
       split = spliter(ARGV)
       obj2 = Weatherman.new(split[0], split[1])
       puts "#{split[1]} #{split[0]} \n"
 
-      obj2.ret_high_min_temp.each do |x|
-        puts "Bargraph high: #{x}"
-        puts "Bargraph Low: #{x.next}"  ###not clear
+      x = obj2.min_temp
+      y = obj2.max_temp
+      min_max_temp = Hash[x.zip(y)]
+      puts min_max_temp
+
+      i = 1
+      min_max_temp. each do |key, value|
+
+        puts "#{i} #{ '+'.red * (value.to_i)} #{value}C"
+        puts "#{i} #{ '+'.blue * (key.to_i)} #{key}C"
+        i=i+1
+
       end
+
+      y=1
+      min_max_temp. each do |key, value|
+        puts "#{y} #{'+'.blue * (key.to_i)}#{'+'.red * (value.to_i)} #{key}C - #{value}C"
+        y=y+1
+      end
+
 
 
 
