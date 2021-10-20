@@ -3,7 +3,7 @@
 require 'date'
 require 'csv'
 require 'colorize'
-require '/home/devs/Downloads/Weatherman/weatherman/Calculations'
+require '/home/devs/Downloads/Weatherman/weatherman/calculations'
 
 # Main class of Weatherman
 class Weatherman
